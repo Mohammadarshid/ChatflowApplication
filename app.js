@@ -3,6 +3,7 @@ const colors = require("colors");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const connectdb = require("./config/db");
 //  rest object
 
 const app = express();
@@ -12,6 +13,12 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 dotenv.config();
+
+
+// db connection
+connectdb();
+
+
 
 // route
 app.get("/test", (req, res) => {
