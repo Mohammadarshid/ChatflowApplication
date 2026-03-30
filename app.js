@@ -18,6 +18,10 @@ dotenv.config();
 // db connection
 connectdb();
 
+// route
+
+app.use("/api/v1/test",require("./Routes/Userroutes"))
+
 
 
 // route
